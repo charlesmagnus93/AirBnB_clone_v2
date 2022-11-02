@@ -9,10 +9,10 @@ def do_pack():
 	"""
 	Generate the .tgz archive
 	"""
-	import datetime
+	from datetime import datetime
 	import os.path
 
-	today = datetime.datetime.now()
+	today = datetime.now()
 
 	tgz_file_path = 'versions/web_static_{}{}{}{}{}{}.tgz'.format(
 		today.year, today.month,
