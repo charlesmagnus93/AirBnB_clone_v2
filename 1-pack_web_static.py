@@ -9,18 +9,18 @@ def do_pack():
 	"""
 	Generate the .tgz archive
 	"""
-    	from datetime import datetime
-    	import os.path
+	import datetime
+	import os.path
 
-    	date = datetime.now()
+	today = datetime.datetime.now()
 
-    	tgz_file_path = 'versions/web_static_{}{}{}{}{}{}.tgz'.format(
-      		date.year,
-		date.month,
-		date.day,
-		date.hour,
-		date.minute,
-		date.second
+	tgz_file_path = 'versions/web_static_{}{}{}{}{}{}.tgz'.format(
+		today.year,
+		today.month,
+		today.day,
+		today.hour,
+		today.minute,
+		today.second
 	)
 
 	if not os.path.exists('versions'):
@@ -37,7 +37,7 @@ def do_pack():
 	print('web_static packed: {} -> {}Bytes'.format(
 		tgz_file_path, file_stats.st_size))
 
-    	if not res.stderr:
+	if not res.stderr:
 		return os.path.realpath(tgz_file_path)
 	else:
 		return None
