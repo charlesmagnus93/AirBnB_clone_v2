@@ -34,8 +34,7 @@ def do_pack():
 	file_stats = os.stat(tgz_file_path)
 
 	print('web_static packed: {} -> {}Bytes'.format(
-		tgz_file_path, file_stats.st_size)
-	)
+		tgz_file_path, file_stats.st_size))
 
 	if not res.stderr:
 		return os.path.realpath(tgz_file_path)
