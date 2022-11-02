@@ -24,7 +24,9 @@ def do_pack():
 		os.mkdir('versions')
 
 	print('Packing web_static to ' + tgz_file_path)
-	res = local('tar  -cvzf {} {}'.format(tgz_file_path, 'web_static'))
+	res = local('tar  -cvzf {} {}'.format(
+		tgz_file_path, 'web_static')
+	)
 
 	if res.stderr:
 		return None
