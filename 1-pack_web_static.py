@@ -15,7 +15,13 @@ def do_pack():
     	date = datetime.now()
 
     	tgz_file_path = 'versions/web_static_{}{}{}{}{}{}.tgz'.format(
-      		date.year, date.month, date.day, date.hour, date.minute, date.second)
+      		date.year,
+		date.month,
+		date.day,
+		date.hour,
+		date.minute,
+		date.second
+	)
 
 	if not os.path.exists('versions'):
 		os.mkdir('versions')
