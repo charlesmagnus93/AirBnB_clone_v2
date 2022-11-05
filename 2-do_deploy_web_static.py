@@ -52,6 +52,10 @@ def do_deploy(archive_path):
     if not os.path.exists(archive_path):
         return None
 
+    env.hosts = ['52.3.245.71', '54.175.98.56']
+
+    env.username = 'ubuntu'
+
     remote_archive = '/tmp/' + os.path.basename(archive_path)
 
     remote_folder = '/data/web_static/releases/'
@@ -62,7 +66,6 @@ def do_deploy(archive_path):
     r = sudo('mkdir -p {} && tar -xvf {} -C {}'.format(
         remote_folder, remote_archive, remote_folder)
     )
-
     if r.stderr:
         return False
 
