@@ -6,6 +6,7 @@ from fabric.api import *
 
 
 def do_pack():
+
 	"""
 	Generate the .tgz archive
 	"""
